@@ -1,0 +1,642 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  background: #0c0d11;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h2{
+  font-family: 'Open Sans', sans-serif;
+}
+
+h4{
+  font-family: 'Lora', serif;
+}
+
+
+button[name="sendMail"]{
+  width: auto;
+  height: auto;
+  grid-area: buttonSend;
+  justify-self: start;
+  border: 1px solid rgb(160, 212, 255);
+  border-radius: 4px;
+  padding: 10px!important;
+}
+
+button[name="sendMail"]:hover{
+  box-shadow: 0px 0px 8px rgba(160,212, 255, 0.8);
+}
+
+button[name="sendMail"]:active{
+  transform: scale(0.9);
+}
+
+footer{
+  background-image: url("./img/moon-surface.svg");
+  height: 45px;
+  padding: 25px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+  /* display: grid; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:  "logo . contact"
+                        "title title title"
+                        "mouse mouse mouse";
+}
+
+#logo {
+  grid-area: logo;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 25px;
+  font-family: 'Dancing Script', cursive;
+  z-index: 2;
+
+}
+
+#c-btn {
+  grid-area: contact;
+  height: 40px;
+  width: 80px;
+  border-radius: 4px;
+  border: 1px solid rgb(160, 212, 255);
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  justify-self: end;
+  margin-top: 20px;
+  margin-right: 20px;
+  z-index: 2;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#c-btn:active{
+  transform: scale(0.9);
+}
+
+#c-btn:hover{
+  box-shadow: 0px 0px 8px rgba(160,212, 255, 0.8);
+}
+
+#c-btn:focus{
+  outline: 0;
+}
+
+#main-title {
+  grid-area: title;
+  justify-self: center;
+  font-size: 80px;
+  font-family: 'Amatic SC', cursive;
+  transform: rotate(-2deg);
+  letter-spacing: 2px;
+  text-shadow: 4px 1px 11px rgb(144, 144, 144);
+  z-index: 2;
+}
+
+#second {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:  "title title"
+                        "left right";
+  min-height: 500px;
+  padding: 3%;
+
+}
+
+#about{
+  grid-area: title;
+  justify-self: start;
+
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+
+
+#s-left{
+  grid-area: left;
+}
+
+#s-left > h2{
+  padding-bottom: 10px;
+}
+
+#s-left > h4{
+  margin-left: 10px;
+  padding-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+#s-left > p{
+  line-height: 130%;
+  padding-top: 10px;
+}
+
+#s-right{
+  grid-area: right;
+  justify-self: center;
+}
+
+
+#third{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas: ". . title"
+                       "left mid right";
+  min-height: 500px;
+  padding: 3%;
+  grid-gap: 2%;
+
+}
+
+#what{
+  grid-area: title;
+  margin: 20px 0px; /*Redundant (title class)*/
+  justify-self: end;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+
+}
+
+#webDev{
+  grid-area: right;
+}
+
+#design{
+  grid-area: mid;
+}
+
+#research{
+  grid-area: left;
+}
+
+#planetWatcher{
+  width: 200px;
+  height: 120px;
+  margin: 10px 35%;
+}
+
+#telescope{
+  animation: move 3s alternate infinite;
+}
+
+#rocketDesign{
+  height: 120px;
+  width: 200px;
+  margin: 10px 35%;
+  animation: rotateAround 7s infinite;
+}
+
+#g4554 > path, #g4536 > path, #rect4524{
+  animation: colorChanger 15s alternate infinite;
+}
+
+#responsiveDevelopment{
+  width: 200px;
+  height: 120px;
+  margin: 10px 20%;
+}
+
+#bigscreen{
+  transform: translate3d(5px, 0, 0);
+}
+
+#tablet{
+  transform: translate3d(-23px, 0, 0);
+}
+
+#computer{
+  animation: hovers 3s alternate infinite;
+}
+
+#pad{
+  animation: hovers2 5s alternate infinite;
+}
+
+#phone{
+  animation: hovers3 4s alternate infinite;
+}
+
+#projects{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "title title title"
+                       "travel urparty personal";
+  padding: 3%;
+  grid-gap: 3%
+}
+
+
+#projects > div > h4{
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+
+#projects > div > p{
+  margin-top: 10px;
+}
+
+#projects-title{
+  grid-area: title;
+  justify-self: start;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+  margin: 20px 0;
+}
+
+#travel{
+  grid-area: travel;
+}
+
+#personalsite{
+  grid-area: personal;
+}
+
+#urparty{
+  grid-area: urparty;
+  justify-self: center;
+}
+
+
+#skills{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:  "title title title"
+                        "full skill skill";
+  padding: 3%;
+}
+
+#skills-title{
+  grid-area: title;
+  justify-self: end;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+  margin: 20px 0;
+}
+
+#skills-content{
+  grid-area: full;
+  min-height: 400px;
+}
+
+#skills-text{
+  grid-area: skill;
+  justify-self: center;
+  align-self: center;
+}
+
+#skills-text > ul{
+ list-style: none;
+ margin-left: 10px;
+}
+#skills-text > ul > li::before {
+    content: "►"; /* Insert content that looks like bullets */
+    padding-right: 8px;
+    color: white; /* Or a color you prefer */
+}
+
+#skills-text > ul > li{
+  margin: 5px;
+  font-size: 20px;
+}
+
+#canvas1{
+  position: absolute;
+  z-index: 0;
+}
+
+#canvas2{
+  position: absolute;
+  z-index: 1;
+}
+
+#contact{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:  "title title"
+                        "left right";
+  padding: 3%;
+}
+
+#contact-title{
+  grid-area: title;
+  justify-self: start;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+  margin: 20px 0px;
+}
+
+#c-left{
+  grid-area: right;
+  justify-self: center;
+  align-self: center;
+  min-width: 200px;
+  margin: 20px;
+}
+
+#c-right{
+  grid-area: left;
+}
+
+#c-form{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:  "text"
+                        "nameInput"
+                        "emailInput"
+                        "messageInput"
+                        "buttonSend";
+}
+
+.inputStyle{
+  margin: 10px 0;
+  color: white;
+  background: rgba(1,1,1,0);
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px 0 10px 10px;
+  width: 95%;
+  box-shadow: inset 0px 0px 10px 0px whitesmoke;
+  border-radius: 3px;
+}
+
+.inputStyle:focus{
+  outline: 0;
+  background: -moz-linear-gradient(top, rgba(99,185,255,0.14) 0%, rgba(203,107,255,0.21) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(99,185,255,0.14) 0%,rgba(203,107,255,0.21) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(99,185,255,0.14) 0%,rgba(203,107,255,0.21) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2463b9ff', endColorstr='#36cb6bff',GradientType=0 ); /* IE6-9 */
+}
+
+#c-form > p{
+  padding: 0;
+  grid-area: text;
+}
+
+#iName{
+  grid-area: nameInput;
+}
+
+#iMail{
+  grid-area: emailInput;
+}
+
+#c-form > textarea{
+  resize: none;
+  overflow: auto;
+}
+
+#iText{
+  grid-area: messageInput;
+}
+
+#c-form > button{
+  grid-area: buttonSend;
+  height: 40px;
+  width: auto;
+  border-radius: 4px;
+  border: 1px solid rgb(160, 212, 255);
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#c-form > button:focus{
+  outline: 0;
+  background: -moz-linear-gradient(top, rgba(99,185,255,0.14) 0%, rgba(203,107,255,0.21) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(99,185,255,0.14) 0%,rgba(203,107,255,0.21) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(99,185,255,0.14) 0%,rgba(203,107,255,0.21) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2463b9ff', endColorstr='#36cb6bff',GradientType=0 ); /* IE6-9 */
+}
+
+
+/* Classes */
+
+.mouse {
+  grid-area: mouse;
+  align-self: end;
+  justify-self: center;
+  margin-bottom: 2%;
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+
+.scrollwheel {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scrollmouse;
+  animation-duration: 4s;
+  animation-timing-function: cubic-bezier(0.57, 0.06, 0.69, 0.94);
+  animation-iteration-count: infinite;
+}
+
+.italy{
+  font-style: italic;
+}
+
+.thirdBox > object{
+  height: 150px;
+  width: 150px;
+  margin: 0 35%;
+}
+
+.thirdBox > h2{
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
+
+.thirdBox > p{
+  line-height: 140%;
+  padding-top: 10px;
+}
+
+.logo1{
+  height: 200px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+
+.fa{
+  color: red;
+}
+
+
+
+
+@keyframes scrollmouse {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(7px); opacity: 0;}
+}
+
+@keyframes move {
+  100%{
+    transform: translate3d(10px,1px,0) rotateZ(5deg);
+  }
+}
+
+@keyframes rotateAround {
+  0%{
+    transform: rotateY(0);
+  }
+  50%{
+    transform: rotateY(190deg);
+  }
+  100%{
+    transform: rotateY(0);
+  }
+}
+
+@keyframes colorChanger {
+  10%{
+    fill: #d5ff7d;
+  }
+  30%{
+    fill: #ea196a;
+  }
+  70%{
+    fill: #b548ff;
+  }
+}
+
+@keyframes hovers {
+   0%{
+    transform: translate3d(-40px,80px, 0);
+  }
+  100%{
+    transform: translate3d(-40px,90px, 0);
+  }
+}
+
+@keyframes hovers2 {
+  0%{
+    transform: translate3d(-55px, 93px, 0);
+  }
+  100%{
+    transform: translate3d(-55px, 106px, 0);
+  }
+}
+
+@keyframes hovers3 {
+  0%{
+    transform: translate3d(-50px, -90px, 0);
+  }
+  100%{
+    transform: translate3d(-50px, -75px, 0);
+  }
+}
+
+@media (max-width: 760px) {
+  #main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:  "logo . contact"
+                          "title title title "
+                          ". mouse . ";
+  }
+
+  #second{
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:  "title"
+                          "right"
+                          "left"
+  }
+
+  #third{
+    display: grid;
+    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:  "title"
+                          "left"
+                          "mid"
+                          "right"
+  }
+
+  #projects{
+    display: grid;
+    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "title"
+                           "travel"
+                           "personal"
+                           "urparty";
+  }
+
+  .logo1{
+    height: 200px;
+    width: 50%;
+    margin: 0 25%;
+  }
+
+  #skills{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "title"
+                         "full"
+                         "skill";
+  }
+
+  #skills-text{
+    margin: 0 auto;
+    height: auto;
+  }
+
+  #contact{
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:  "title"
+                          "left"
+                          "right";
+  }
+
+  #third > div{
+    border-bottom: 1px dashed black;
+    margin-top: 20px;
+  }
+
+  #me-drawn{
+    height: 80%;
+    width: 80%;
+  }
+
+  .mouse{
+    margin-bottom: 10%;
+  }
+}
